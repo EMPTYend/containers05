@@ -54,22 +54,22 @@ CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/conf.d/supervisord.con
 - bash
 
 docker build -t apache2-php-mariadb .
-[Сборка](images/3.png)
+![Сборка](images/3.png)
 
 docker run -d -p 8000:80 --name apache2-php-mariadb apache2-php-mariadb
-[Запуск](images/4.png)
+![Запуск](images/4.png)
 
 ## Копирую из контейнера файлы конфигурации apache2, php, mariadb в папку files/ на компьютере.
-[Код](images/5.png)
-[Файлы](images/6.png)
+![Код](images/5.png)
+![Файлы](images/6.png)
 
 ## Остановите и удалите контейнер apache2-php-mariadb.
-[](images/7.png)
+![](images/7.png)
 
 ## Конфигурационный файл apache2.
-[000-default.conf](images/8.png)
+![000-default.conf](images/8.png)
 
-[apache2.conf](images/9.png)
+![apache2.conf](images/9.png)
 
 ## Конфигурационный файл php
 
@@ -81,17 +81,17 @@ docker run -d -p 8000:80 --name apache2-php-mariadb apache2-php-mariadb
 - max_execution_time = 120
 
 ## Конфигурационный файл mariadb
-[50-server.cnf](images/10.png)
+![50-server.cnf](images/10.png)
 
 ## Создание скрипта запуска
-[supervisord.conf](images/11.png)
+![supervisord.conf](images/11.png)
 
 ## Создание Dockerfile
-[Dockerfile](images/12.png)
+![Dockerfile](images/12.png)
 
 ## Сбор образа контейнера и запуск 
-[Сбор образа](images/13.png)
-[запуск образа](images/14.png)
+![Сбор образа](images/13.png)
+![запуск образа](images/14.png)
 # Шаг 4: Настройка базы данных
 Внутри контейнера создается база данных и пользователь для WordPress:
 
@@ -102,21 +102,21 @@ CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
 FLUSH PRIVILEGES;
 
-[Создание БД](images/15.png)
+![Создание БД](images/15.png)
 
 # Шаг 5: Настройка WordPress
 Перейдите в браузер по адресу http://localhost:8000/wordpress, чтобы завершить настройку WordPress. Указываю параметры подключения к базе данных в файле wp-config.php.
 
 ## Создание файла конфигурации WordPress
-[wp-config.php](images/16.png)
+![wp-config.php](images/16.png)
 
 ## Добавление файла конфигурации WordPress в Dockerfile
-[WordPress](images/17.png)
+![WordPress](images/17.png)
 
 # Шаг 6: Проверка работоспособности сайта
 После настройки базы данных и WordPress сайт должен работать.
 
-[Site](images/18.png)
+![Site](images/18.png)
 
 # Ответы на вопросы
 1. Какие файлы конфигурации были изменены?
