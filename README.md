@@ -35,11 +35,11 @@ VOLUME /var/log
 
 ADD https://wordpress.org/latest.tar.gz /var/www/html/
 
-COPY files/apache2/000-default.conf /etc/apache2/sites-available/000-default.conf
-COPY files/apache2/apache2.conf /etc/apache2/apache2.conf
-COPY files/php/php.ini /etc/php/8.2/apache2/php.ini
-COPY files/mariadb/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
-COPY files/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
+- COPY files/apache2/000-default.conf /etc/apache2/sites-available/000-default.conf
+- COPY files/apache2/apache2.conf /etc/apache2/apache2.conf
+- COPY files/php/php.ini /etc/php/8.2/apache2/php.ini
+- COPY files/mariadb/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+- COPY files/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN mkdir /var/run/mysqld && chown mysql:mysql /var/run/mysqld
 
@@ -135,6 +135,6 @@ FLUSH PRIVILEGES;
 Параметр post_max_size ограничивает максимальный размер данных, которые могут быть отправлены через HTTP POST-запрос.
 
 # Выводы
-В ходе выполнения лабораторной работы был создан контейнер с веб-сайтом WordPress, использующим Apache, PHP и MariaDB.
-Все компоненты были настроены корректно, и после выполнения шагов по настройке базы данных и подключения к WordPress, сайт успешно заработал. 
-Этот проект позволяет лучше понять работу с Docker и настройку веб-серверов в контейнерах.
+- В ходе выполнения лабораторной работы был создан контейнер с веб-сайтом WordPress, использующим Apache, PHP и MariaDB.
+- Все компоненты были настроены корректно, и после выполнения шагов по настройке базы данных и подключения к WordPress, сайт успешно заработал. 
+- Этот проект позволяет лучше понять работу с Docker и настройку веб-серверов в контейнерах.
